@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:weslini/home.dart';
 
 void main() {
   runApp(MyApp());
 }
 
+//stateleess static data mchi button wlaa that text des images c tt
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Mon Application Flutter'), // Ajoutez le texte ici
-        ),
-        body: Center(
-          child: Text(
-            'Bienvenue dans mon application Flutter!', // Ajoutez votre texte ici
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
-      ),
+      debugShowCheckedModeBanner: false, //pour enlever sharit a cote
+      home: Home(),
     );
   }
 }
