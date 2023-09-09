@@ -220,14 +220,17 @@ class _PassagerState extends State<Passager> {
                 SizedBox(
                   height: 20,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Dis nous ',
-                    hintStyle: TextStyle(color: Colors.grey),
-                    border: InputBorder.none, // No border
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                          color: Color(0xFFEC6294)), // Bottom border in pink
+                SingleChildScrollView(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Dites-nous ce que vous pensez de ce trajet',
+                      hintStyle: TextStyle(color: Colors.grey),
+                      border: InputBorder.none,
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFEC6294),
+                        ),
+                      ),
                     ),
                   ),
                 ),
