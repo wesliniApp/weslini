@@ -1,7 +1,10 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:weslini/chauffeur/chauffeurHome.dart';
+<<<<<<< HEAD
 import 'package:weslini/home.dart';
+=======
+import 'package:weslini/caisse.dart';
+>>>>>>> 906c273d27e75dac09d97e1c8db934ce2278e7b1
 
 void main() {
   runApp(MyApp());
@@ -12,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< HEAD
         debugShowCheckedModeBanner: false, //pour enlever sharit a cote
         home: SplashScreen());
   }
@@ -54,5 +58,10 @@ class _SplashScreenState extends State<SplashScreen> {
         ],
       ),
     ));
+=======
+      debugShowCheckedModeBanner: false, //pour enlever sharit a cote
+      home: Caisse(),
+    );
+>>>>>>> 906c273d27e75dac09d97e1c8db934ce2278e7b1
   }
 }
