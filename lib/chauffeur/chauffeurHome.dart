@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weslini/chauffeur/enrecuperation.dart';
 
 class ChauffeurHome extends StatefulWidget {
   const ChauffeurHome({Key? key});
@@ -8,9 +9,10 @@ class ChauffeurHome extends StatefulWidget {
 }
 
 class _ChauffeurHomeState extends State<ChauffeurHome> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   Color textColor = Color(0xFF8C8C8C);
-  Color primaryColor = Color(0xFFEC6294); // Couleur grise
+  Color primaryColor = Color(0xFFEC6294);
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   void _openDrawer() {
     _scaffoldKey.currentState?.openDrawer();
@@ -45,6 +47,25 @@ class _ChauffeurHomeState extends State<ChauffeurHome> {
             ),
           ),
         ),
+        actions: <Widget>[
+          Container(
+            margin: EdgeInsets.only(right: 10, top: 10),
+            width: screenWidth * 0.2, // Ajustez la largeur ici
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(3),
+              shape: BoxShape.rectangle,
+              color: Color(0xFF383838).withOpacity(0.75),
+            ),
+            child: Center(
+              child: Text(
+                "00:12",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       body: Stack(
         children: <Widget>[
@@ -299,9 +320,7 @@ class _ChauffeurHomeState extends State<ChauffeurHome> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               SizedBox(
-                                width: MediaQuery.of(context).size.width < 600
-                                    ? 100
-                                    : 150,
+                                width: screenWidth < 600 ? 100 : 150,
                                 child: ElevatedButton(
                                   onPressed: () {
                                     Navigator.push(
@@ -315,7 +334,7 @@ class _ChauffeurHomeState extends State<ChauffeurHome> {
                                     padding: EdgeInsets.all(16.0),
                                     backgroundColor: Colors.white,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderRadius: BorderRadius.circular(30),
                                       side: BorderSide(
                                         color: primaryColor,
                                         width: 1.0,
@@ -330,28 +349,25 @@ class _ChauffeurHomeState extends State<ChauffeurHome> {
                                 ),
                               ),
                               SizedBox(
-                                width: MediaQuery.of(context).size.width < 600
+                                width: screenWidth < 600
                                     ? 10
                                     : 20, // Espacement entre les boutons
                               ),
                               SizedBox(
-                                width: MediaQuery.of(context).size.width < 600
-                                    ? 150
-                                    : 200,
+                                width: screenWidth < 600 ? 150 : 200,
                                 child: ElevatedButton(
                                   onPressed: () {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              ChauffeurHome()),
+                                          builder: (context) => Recuperation()),
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
                                     padding: EdgeInsets.all(16.0),
                                     backgroundColor: primaryColor,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderRadius: BorderRadius.circular(30),
                                     ),
                                   ),
                                   child: Text('Accepter'),
