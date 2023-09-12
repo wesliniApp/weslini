@@ -118,7 +118,7 @@ class _PassagerState extends State<Passager> {
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 46.0, right: 46.0),
-                    child: Column(children: [
+                    child: Column(children: <Widget>[
                       Row(
                         children: [
                           Icon(
@@ -137,8 +137,17 @@ class _PassagerState extends State<Passager> {
                           )
                         ],
                       ),
-                      SizedBox(
-                        height: 20,
+                      Container(
+                        margin: EdgeInsets.only(
+                            left: 10.0), // Marge à gauche de la ligne
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            width: 2.0, // Largeur de la ligne verticale
+                            height: 20.0, // Hauteur de la ligne verticale
+                            color: Color(0xFFEC6294),
+                          ),
+                        ),
                       ),
                       Row(
                         children: [
