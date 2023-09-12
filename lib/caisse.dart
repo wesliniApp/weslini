@@ -11,13 +11,14 @@ class _CaisseState extends State<Caisse> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               Icons.check_circle,
-              size: 100,
+              size: 90,
               color: Color(0xFFEC6294),
             ),
             SizedBox(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weslini/caisse.dart';
+
+import 'package:weslini/coursier.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //pour enlever sharit a cote
-      home: Caisse(),
+      home: Coursier(),
     );
   }
 }
