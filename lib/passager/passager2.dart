@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weslini/passager/vehicule.dart';
 
 class FormDestination extends StatefulWidget {
   const FormDestination({super.key});
@@ -135,7 +136,12 @@ class _FormDestinationState extends State<FormDestination> {
                 ),
               ),
               onPressed: () {
-                // Your button's onPressed callback
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          Vehicule()), // Remplacez 'PageVoiture' par le nom de votre page de voiture
+                );
               },
               child: Text(
                 'Valider',
