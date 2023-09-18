@@ -17,7 +17,27 @@ class _FormDestinationState extends State<FormDestination> {
           Container(
               child: Column(children: [
             SizedBox(
-              height: 100,
+              height: 50,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 16.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: CircleAvatar(
+                  backgroundColor: Color(0xFFEC6294),
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pop(); // Retour à la page précédente
+                    },
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 50,
             ),
             Padding(
               padding: EdgeInsets.only(
@@ -117,7 +137,13 @@ class _FormDestinationState extends State<FormDestination> {
               onPressed: () {
                 // Your button's onPressed callback
               },
-              child: Text('Valider'),
+              child: Text(
+                'Valider',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             )
           ]))
         ])));
