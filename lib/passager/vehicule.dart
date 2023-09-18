@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weslini/passager/coursier.dart';
 
 class Vehicule extends StatefulWidget {
   const Vehicule({Key? key});
@@ -96,26 +97,36 @@ class _VehiculeState extends State<Vehicule> {
                         ),
                         Column(
                           children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Vehicule confort',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFF979797),
+                            InkWell(
+                              onTap: () {
+                                // Naviguez vers la nouvelle page ici
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Coursier(),
                                   ),
-                                ),
-                                SizedBox(width: 60.0),
-                                Text(
-                                  '670 DA',
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.normal,
-                                    color: Color(0xFF979797),
+                                );
+                              },
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Véhicule confort',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xFF979797),
+                                    ),
                                   ),
-                                )
-                              ],
+                                  SizedBox(width: 60.0),
+                                  Text(
+                                    '670 DA',
+                                    style: TextStyle(
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.normal,
+                                      color: Color(0xFF979797),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -152,26 +163,36 @@ class _VehiculeState extends State<Vehicule> {
                         ),
                         Column(
                           children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'Vehicule simple',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xFF979797),
+                            InkWell(
+                              onTap: () {
+                                // Naviguez vers la nouvelle page ici
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Coursier(),
                                   ),
-                                ),
-                                SizedBox(width: 60.0),
-                                Text(
-                                  '470 DA',
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    fontWeight: FontWeight.normal,
-                                    color: Color(0xFF979797),
+                                );
+                              },
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Véhicule simple',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xFF979797),
+                                    ),
                                   ),
-                                )
-                              ],
+                                  SizedBox(width: 60.0),
+                                  Text(
+                                    '470 DA',
+                                    style: TextStyle(
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.normal,
+                                      color: Color(0xFF979797),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,

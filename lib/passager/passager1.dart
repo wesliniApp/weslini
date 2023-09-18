@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weslini/passager2.dart';
+import 'package:weslini/passager/passager2.dart';
 
 class PassagerHome extends StatefulWidget {
   const PassagerHome({Key? key});
