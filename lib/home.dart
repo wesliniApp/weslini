@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:weslini/chauffeur/chauffeurHome.dart';
+<<<<<<< HEAD
 import 'package:weslini/connexion.dart';
 import 'package:weslini/passager/aide.dart';
 
+=======
+>>>>>>> a036a047abdf680b159b98e6a8788eecd0e1d68d
 import 'package:weslini/passager/passager1.dart';
 
 class Home extends StatefulWidget {
