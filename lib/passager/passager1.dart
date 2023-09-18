@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weslini/passager/passager2.dart';
+import 'package:weslini/profile.dart';
 
 class PassagerHome extends StatefulWidget {
   const PassagerHome({Key? key});
@@ -127,8 +128,13 @@ class _PassagerHomeState extends State<PassagerHome> {
         child: ListView(
           children: <Widget>[
             ListTile(
-              title: Text('Option 1'),
-              onTap: () {},
+              title: Text('Profil'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
+              },
             ),
             ListTile(
               title: Text('Option 2'),
