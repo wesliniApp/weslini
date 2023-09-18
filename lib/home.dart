@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weslini/chauffeur/chauffeurHome.dart';
-import 'package:weslini/passager.dart';
+import 'package:weslini/passager1.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          Passager()), // Naviguez vers PassagerHome
+                          PassagerHome()), // Naviguez vers PassagerHome
                 );
               },
               child: Text('Accès Passager'),
