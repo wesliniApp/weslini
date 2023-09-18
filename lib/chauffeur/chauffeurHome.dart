@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weslini/chauffeur/enrecuperation.dart';
+import 'package:weslini/chauffeur/gain.dart';
+import 'package:weslini/chauffeur/historique.dart';
 
 class ChauffeurHome extends StatefulWidget {
   const ChauffeurHome({Key? key});
@@ -389,12 +391,23 @@ class _ChauffeurHomeState extends State<ChauffeurHome> {
         child: ListView(
           children: <Widget>[
             ListTile(
-              title: Text('Option 1'),
-              onTap: () {},
+              title: Text('Historique'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HistoriqueChauffeur()),
+                );
+              },
             ),
             ListTile(
-              title: Text('Option 2'),
-              onTap: () {},
+              title: Text('Revenus'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GainChauffeur()),
+                );
+              },
             ),
           ],
         ),
