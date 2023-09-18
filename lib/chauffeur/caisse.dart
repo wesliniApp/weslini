@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weslini/vehicule.dart';
 
 class Caisse extends StatefulWidget {
   const Caisse({super.key});
