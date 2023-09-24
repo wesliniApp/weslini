@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weslini/passager/aide.dart';
 import 'package:weslini/passager/passager2.dart';
 import 'package:weslini/profile.dart';
 
@@ -137,8 +138,13 @@ class _PassagerHomeState extends State<PassagerHome> {
               },
             ),
             ListTile(
-              title: Text('Option 2'),
-              onTap: () {},
+              title: Text('Centre aide'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Aide()),
+                );
+              },
             ),
           ],
         ),

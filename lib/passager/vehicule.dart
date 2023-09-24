@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:weslini/passager/aide.dart';
 import 'package:weslini/passager/coursier.dart';
+import 'package:weslini/profile.dart';
 
 class Vehicule extends StatefulWidget {
   const Vehicule({Key? key});
@@ -96,6 +98,8 @@ class _VehiculeState extends State<Vehicule> {
                           ],
                         ),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment
+                              .start, // Aligner les éléments à gauche
                           children: [
                             InkWell(
                               onTap: () {
@@ -132,14 +136,13 @@ class _VehiculeState extends State<Vehicule> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  '3 vehicule',
+                                  '3 véhicules',
                                   style: TextStyle(
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                     color: Color(0xFF979797),
                                   ),
-                                ),
-                                SizedBox(width: 60.0),
+                                )
                               ],
                             )
                           ],
@@ -162,6 +165,8 @@ class _VehiculeState extends State<Vehicule> {
                           height: 80,
                         ),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment
+                              .start, // Aligner les éléments à gauche
                           children: [
                             InkWell(
                               onTap: () {
@@ -198,14 +203,13 @@ class _VehiculeState extends State<Vehicule> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  '2 vehicule',
+                                  '2 véhicules',
                                   style: TextStyle(
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.normal,
                                     color: Color(0xFF979797),
                                   ),
                                 ),
-                                SizedBox(width: 60.0),
                               ],
                             )
                           ],
@@ -223,12 +227,22 @@ class _VehiculeState extends State<Vehicule> {
         child: ListView(
           children: <Widget>[
             ListTile(
-              title: Text('Option 1'),
-              onTap: () {},
+              title: Text('Profil'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
+              },
             ),
             ListTile(
-              title: Text('Option 2'),
-              onTap: () {},
+              title: Text('Centre aide'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Aide()),
+                );
+              },
             ),
           ],
         ),

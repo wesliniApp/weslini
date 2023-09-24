@@ -129,10 +129,11 @@ class _FormDestinationState extends State<FormDestination> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Color(0xFFEC6294), // Background color
-                onPrimary: Colors.white, // Text color
+                primary: Color(0xFFEC6294), // Couleur de fond du bouton
+                padding: EdgeInsets.symmetric(horizontal: 140, vertical: 15),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0), // Border radius
+                  borderRadius: BorderRadius.circular(
+                      10.0), // Optionnel : arrondir les coins du bouton
                 ),
               ),
               onPressed: () {

@@ -1,27 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 class InscrPassager extends StatefulWidget {
-  final TextEditingController dateController = TextEditingController();
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime.now(),
-      lastDate: DateTime(
-          DateTime.now().year + 10), // Limit dates to the next 10 years
-    );
-    if (picked != null && picked != DateTime.now()) {
-      var DateFormat;
-      dateController.text = DateFormat.yMMMd().format(picked);
-    }
-  }
-
   @override
   State<InscrPassager> createState() => _InscrPassagerState();
 }
 
 class _InscrPassagerState extends State<InscrPassager> {
+  final TextEditingController dateController = TextEditingController();
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime(DateTime.now().year + 10),
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: ThemeData.light().copyWith(
+            primaryColor: Color(0xFFEC6294), // Couleur du calendrier en rose
+            hintColor: Color(0xFFEC6294), // Couleur de la date sélectionnée
+            colorScheme: ColorScheme.light(primary: Color(0xFFEC6294)),
+            buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary),
+          ),
+          child: child!,
+        );
+      },
+    );
+
+    if (picked != null && picked != DateTime.now()) {
+      var formattedDate = DateFormat.yMMMd().format(picked);
+      dateController.text = formattedDate;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var dateController;
@@ -54,7 +67,7 @@ class _InscrPassagerState extends State<InscrPassager> {
               child: Text('Créer votre compte',
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    color: Color(0xFF8C8C8C),
+                    color: Color(0xFFEC6294),
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   )),
@@ -85,7 +98,6 @@ class _InscrPassagerState extends State<InscrPassager> {
                       alignLabelWithHint: false,
                       labelStyle: TextStyle(
                         color: Color(0xFF979797),
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -115,7 +127,6 @@ class _InscrPassagerState extends State<InscrPassager> {
                       alignLabelWithHint: true,
                       labelStyle: TextStyle(
                         color: Color(0xFF979797),
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -133,6 +144,7 @@ class _InscrPassagerState extends State<InscrPassager> {
                   TextFormField(
                     onChanged: (numero) {},
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    maxLength: 10,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
                       focusedBorder: OutlineInputBorder(
@@ -146,7 +158,6 @@ class _InscrPassagerState extends State<InscrPassager> {
                       alignLabelWithHint: true,
                       labelStyle: TextStyle(
                         color: Color(0xFF979797),
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -179,7 +190,6 @@ class _InscrPassagerState extends State<InscrPassager> {
                       alignLabelWithHint: true,
                       labelStyle: TextStyle(
                         color: Color(0xFF979797),
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -211,7 +221,6 @@ class _InscrPassagerState extends State<InscrPassager> {
                       labelText: 'Date de naissance',
                       labelStyle: TextStyle(
                         color: Color(0xFF979797),
-                        fontWeight: FontWeight.bold,
                       ),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -259,6 +268,4 @@ class _InscrPassagerState extends State<InscrPassager> {
       ),
     );
   }
-
-  void _selectDate(BuildContext context) {}
 }

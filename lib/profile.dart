@@ -175,51 +175,30 @@ class _ProfileState extends State<Profile> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 40,
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    child: Text('Genre',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Color(0xFF8C8C8C),
-                        )),
+              width: MediaQuery.of(context).size.width,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Mettez ici votre logique d'inscription
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xFFEC6294), // Couleur de fond du bouton
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        10.0), // Optionnel : arrondir les coins du bouton
                   ),
-                  SizedBox(
-                    height: 10,
+                ),
+                child: Text(
+                  'Modifier Profil',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white, // Couleur du texte du bouton
                   ),
-                  DropdownButtonFormField<String>(
-                    value: selectedGender,
-                    onChanged: (newValue) {
-                      // Mettre à jour le genre sélectionné lorsque l'utilisateur fait un choix
-                      selectedGender = newValue!;
-                    },
-                    items: genre.map((genre) {
-                      return DropdownMenuItem<String>(
-                        value: genre,
-                        child: Text(genre),
-                      );
-                    }).toList(),
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Color(0xFFEC6294),
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ]),
