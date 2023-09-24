@@ -49,17 +49,36 @@ class _ChatScreenState extends State<ChatScreen> {
               itemBuilder: (context, index) {
                 final message = _messages[index];
 
-                return ListTile(
-                  leading: message.isUser
-                      ? null // No avatar for user messages
-                      : CircleAvatar(
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    mainAxisAlignment: message.isUser
+                        ? MainAxisAlignment.end
+                        : MainAxisAlignment.start,
+                    children: <Widget>[
+                      if (!message.isUser)
+                        CircleAvatar(
                           backgroundColor: Color(0xFFFBEDF2),
                           backgroundImage: AssetImage(message.avatarImage),
                         ),
-                  title: Text(
-                    message.text,
-                    textAlign:
-                        message.isUser ? TextAlign.right : TextAlign.left,
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(8.0),
+                        margin: EdgeInsets.symmetric(vertical: 4.0),
+                        decoration: BoxDecoration(
+                          color: message.isUser
+                              ? Colors.grey[300]
+                              : Color(0xFFFBEDF2),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        child: Text(
+                          message.text,
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                    ],
                   ),
                 );
               },
@@ -75,6 +94,12 @@ class _ChatScreenState extends State<ChatScreen> {
                     controller: _textController,
                     decoration: InputDecoration(
                       hintText: 'Tapez votre réponse...',
+                      border: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFFEC6294)),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFFEC6294)),
+                      ),
                     ),
                   ),
                 ),
