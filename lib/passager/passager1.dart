@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weslini/connexion.dart';
-import 'package:weslini/inscrPassager.dart';
+import 'package:weslini/passager/aide.dart';
 import 'package:weslini/passager/passager2.dart';
 import 'package:weslini/profile.dart';
 
@@ -139,29 +138,12 @@ class _PassagerHomeState extends State<PassagerHome> {
               },
             ),
             ListTile(
-              title: Text('Connexion'),
+
+              title: Text('Centre aide'),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Connexion()),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('InscrPassager'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => InscrPassager()),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('Profile'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Profile()),
+                  MaterialPageRoute(builder: (context) => Aide()),
                 );
               },
             ),
