@@ -8,7 +8,8 @@ class InscrPassager extends StatefulWidget {
 }
 
 class _InscrPassagerState extends State<InscrPassager> {
-  final TextEditingController dateController = TextEditingController();
+  final TextEditingController dateController =
+      TextEditingController(); // Déclaré à l'échelle de la classe
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
@@ -205,7 +206,8 @@ class _InscrPassagerState extends State<InscrPassager> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   TextFormField(
-                    controller: dateController,
+                    controller:
+                        dateController, // Use the class-level controller here
                     readOnly: true,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
@@ -214,10 +216,10 @@ class _InscrPassagerState extends State<InscrPassager> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: Color(
-                                0xFFEC6294)), // Couleur de la bordure en focus
+                          color: Color(0xFFEC6294),
+                        ),
                       ),
-                      hintText: 'Selectioner une date',
+                      hintText: 'Sélectionner une date',
                       labelText: 'Date de naissance',
                       labelStyle: TextStyle(
                         color: Color(0xFF979797),

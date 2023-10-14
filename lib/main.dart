@@ -1,7 +1,12 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:weslini/admin_web/admin.dart';
+import 'package:weslini/connexion.dart';
+
 import 'package:weslini/home.dart';
 import 'package:weslini/passager/chat.dart';
+
+import 'package:weslini/inscrPassager.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               backgroundColor: Color(0xFFEC6294),
               nextScreen:
-                  ChatScreen(), // Page d'accueil qui s'ouvre après l'animation
+                  InscrPassager(), // Page d'accueil qui s'ouvre après l'animation
               splashTransition: SplashTransition.fadeTransition,
               duration:
                   2000, // Durée de l'animation en millisecondes (20 secondes dans votre cas)

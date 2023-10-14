@@ -127,7 +127,7 @@ class _ChatScreenState extends State<ChatScreen> {
       // Add agent's response
       if (agentResponseCount == 1) {
         _messages.add(Message(
-          text: 'Bonjour',
+          text: 'Bonjour, comment pouvons-nous vous aider',
           isUser: false,
           avatarImage: 'logoW.png', // Replace with the actual avatar image URL
         ));
