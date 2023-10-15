@@ -38,7 +38,8 @@ class _InscrPassagerState extends State<InscrPassager> {
 
   @override
   Widget build(BuildContext context) {
-    var dateController;
+    // Utilisez le contrôleur de texte de classe ici
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -207,7 +208,7 @@ class _InscrPassagerState extends State<InscrPassager> {
                 children: <Widget>[
                   TextFormField(
                     controller:
-                        dateController, // Use the class-level controller here
+                        dateController, // Utilisez le contrôleur de texte de classe ici
                     readOnly: true,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(horizontal: 12.0),
