@@ -27,7 +27,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
         elevation: 0.0,
         backgroundColor: Colors.white,
         title: Text(
-          "Revenus",
+          "Detail de l'historique",
           style: TextStyle(
             fontFamily: 'inter',
             fontSize: screenWidth < 600 ? 16 : 20,

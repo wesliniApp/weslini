@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weslini/chauffeur/chauffeurHome.dart';
-import 'package:weslini/connexion.dart';
+import 'package:weslini/passager/passager1.dart';
 
 import 'package:weslini/passager/aide.dart';
 import 'package:weslini/passager/passager1.dart';
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          Connexion()), // Naviguez vers PassagerHome
+                          PassagerHome()), // Naviguez vers PassagerHome
                 );
               },
               child: Text('Accès Passager'),
