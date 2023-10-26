@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false, //pour enlever sharit a cote
-        home: SplashScreen());
+        home: Connexion());
   }
 }
 

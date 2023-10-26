@@ -21,7 +21,6 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
     double seuilDeHauteur = 600.0;
 
     // Vérifier si la hauteur de l'écran est inférieure au seuil
-    bool doitMasquerLeConteneur = screenHeight < seuilDeHauteur;
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
