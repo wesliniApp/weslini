@@ -6,7 +6,7 @@ import 'package:weslini/connexion.dart';
 import 'package:weslini/home.dart';
 import 'package:weslini/passager/chat.dart';
 
-import 'package:weslini/inscrPassager.dart';
+import 'package:weslini/passager/inscrPassager.dart';
 
 void main() {
   runApp(MyApp());
