@@ -4,6 +4,7 @@ import 'package:weslini/chauffeur/gain.dart';
 import 'package:weslini/chauffeur/historique.dart';
 
 import 'package:weslini/chauffeur/inscription.dart';
+import 'package:weslini/connexion/connexion.dart';
 
 class ChauffeurHome extends StatefulWidget {
   const ChauffeurHome({Key? key});
@@ -417,6 +418,15 @@ class _ChauffeurHomeState extends State<ChauffeurHome> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => MyForm()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('connexion'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Connexion()),
                 );
               },
             ),

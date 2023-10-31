@@ -1,6 +1,6 @@
 import 'package:weslini/home.dart';
-import 'package:weslini/rest_api.dart';
-import 'package:weslini/form_fields_widgets.dart';
+import 'package:weslini/backend/rest_api.dart';
+import 'package:weslini/connexion/form_fields_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Connexion extends StatefulWidget {
