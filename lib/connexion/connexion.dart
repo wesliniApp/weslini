@@ -1,8 +1,13 @@
 import 'package:weslini/home.dart';
+<<<<<<< HEAD:lib/connexion.dart
 import 'package:weslini/passager/inscrPassager.dart';
 import 'package:weslini/passager/passager1.dart';
 import 'package:weslini/rest_api.dart';
 import 'package:weslini/form_fields_widgets.dart';
+=======
+import 'package:weslini/backend/rest_api.dart';
+import 'package:weslini/connexion/form_fields_widgets.dart';
+>>>>>>> 5d67fea0a04e3aa0856fe2dc7f9fe59d205b23ee:lib/connexion/connexion.dart
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:weslini/utils.dart';

@@ -1,7 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:weslini/admin_web/admin.dart';
-import 'package:weslini/connexion.dart';
+import 'package:weslini/chauffeur/inscription.dart';
+import 'package:weslini/connexion/connexion.dart';
 
 import 'package:weslini/home.dart';
 import 'package:weslini/passager/chat.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false, //pour enlever sharit a cote
-        home: Connexion());
+        home: Home());
   }
 }
 
