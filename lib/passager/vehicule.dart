@@ -226,7 +226,7 @@ class _VehiculeState extends State<Vehicule> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            ListTile(
+            /* ListTile(
               title: Text('Profil'),
               onTap: () {
                 Navigator.push(
@@ -234,7 +234,7 @@ class _VehiculeState extends State<Vehicule> {
                   MaterialPageRoute(builder: (context) => Profile()),
                 );
               },
-            ),
+            ),*/
             ListTile(
               title: Text('Centre aide'),
               onTap: () {

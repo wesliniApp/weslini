@@ -39,12 +39,12 @@ class _HomeState extends State<Home> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          PassagerHome()), // Naviguez vers PassagerHome
-                );
+                // Navigator.push(
+                //  context,
+                //  MaterialPageRoute(
+                //      builder: (context) =>
+                //  PassagerHome()), // Naviguez vers PassagerHome
+                // );
               },
               child: Text('Accès Passager'),
             ),

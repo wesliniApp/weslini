@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:weslini/chauffeur/chauffeurHome.dart';
 import 'package:weslini/passager/aide.dart';
 import 'package:weslini/passager/passager2.dart';
 import 'package:weslini/profile.dart';
 
 class PassagerHome extends StatefulWidget {
-  const PassagerHome({Key? key});
+  final String userType;
+  final String userName;
+  final String userPrenom;
+  final String userEmail;
+  PassagerHome({
+    required this.userType,
+    required this.userName,
+    required this.userPrenom,
+    required this.userEmail,
+  });
 
   @override
   State<PassagerHome> createState() => _PassagerHomeState();
@@ -14,6 +24,18 @@ class _PassagerHomeState extends State<PassagerHome> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   Color textColor = Color(0xFF8C8C8C);
   Color primaryColor = Color(0xFFEC6294); // Couleur grise
+  late String userType;
+  late String userName;
+  late String userPrenom;
+  late String userEmail;
+  @override
+  void initState() {
+    super.initState();
+    userType = widget.userType;
+    userName = widget.userName;
+    userPrenom = widget.userPrenom;
+    userEmail = widget.userEmail;
+  }
 
   void _openDrawer() {
     _scaffoldKey.currentState?.openDrawer();
@@ -133,12 +155,13 @@ class _PassagerHomeState extends State<PassagerHome> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Profile()),
+                  MaterialPageRoute(
+                    builder: (context) => Profile(),
+                  ),
                 );
               },
             ),
             ListTile(
-
               title: Text('Centre aide'),
               onTap: () {
                 Navigator.push(
@@ -147,6 +170,32 @@ class _PassagerHomeState extends State<PassagerHome> {
                 );
               },
             ),
+            if (userType == 'passageretchaufeur')
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 50, right: 20),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChauffeurHome()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFEC6294),
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  child: Text(
+                    'Chauffeur',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
           ],
         ),
       ),

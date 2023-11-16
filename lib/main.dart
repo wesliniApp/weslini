@@ -4,7 +4,6 @@ import 'package:weslini/admin_web/admin.dart';
 import 'package:weslini/chauffeur/inscription.dart';
 import 'package:weslini/connexion/connexion.dart';
 
-import 'package:weslini/home.dart';
 import 'package:weslini/passager/chat.dart';
 
 import 'package:weslini/passager/inscrPassager.dart';
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false, //pour enlever sharit a cote
-        home: Home());
+        home: Connexion());
   }
 }
 
@@ -51,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               backgroundColor: Color(0xFFEC6294),
               nextScreen:
-                  InscrPassager(), // Page d'accueil qui s'ouvre après l'animation
+                  Connexion(), // Page d'accueil qui s'ouvre après l'animation
               splashTransition: SplashTransition.fadeTransition,
               duration:
                   2000, // Durée de l'animation en millisecondes (20 secondes dans votre cas)

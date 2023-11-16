@@ -729,10 +729,10 @@ class _VerificationCodeScreenState extends State<VerificationCodeScreen> {
                     // Vérifiez le code ici
                     if (verificationCodeController.text == generatedCode) {
                       // Le code est correct, redirigez l'utilisateur vers PassagerHome
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => PassagerHome()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //  MaterialPageRoute(builder: (context) => PassagerHome()),
+                      //   );
                     } else {
                       // Le code est incorrect, affichez un message d'erreur
                       showDialog(

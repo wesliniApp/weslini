@@ -1,16 +1,14 @@
+import 'package:weslini/chauffeur/chauffeurHome.dart';
 import 'package:weslini/home.dart';
-<<<<<<< HEAD:lib/connexion.dart
+
 import 'package:weslini/passager/inscrPassager.dart';
 import 'package:weslini/passager/passager1.dart';
-import 'package:weslini/rest_api.dart';
-import 'package:weslini/form_fields_widgets.dart';
-=======
-import 'package:weslini/backend/rest_api.dart';
+
 import 'package:weslini/connexion/form_fields_widgets.dart';
->>>>>>> 5d67fea0a04e3aa0856fe2dc7f9fe59d205b23ee:lib/connexion/connexion.dart
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
-import 'package:weslini/utils.dart';
+
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:math';
@@ -28,6 +26,7 @@ class _ConnexionState extends State<Connexion> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _numeroController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
   Future<void> loginUser() async {
     final String numero = _numeroController.text;
     final String password = _passwordController.text;
@@ -40,7 +39,7 @@ class _ConnexionState extends State<Connexion> {
       "password": password,
     };
     final String apiUrl =
-        'http://192.168.1.9:8080/user/login'; // Replace with your API URL
+        'http://192.168.1.14:3000/user/login'; // Replace with your API URL
 
     final response = await http.post(
       Uri.parse(apiUrl),
@@ -58,12 +57,27 @@ class _ConnexionState extends State<Connexion> {
       print(responseData);
 
       final Route route;
-      switch (responseData['data']) {
+      switch (responseData['data']['type']) {
         case 'passager':
-          route = MaterialPageRoute(builder: (_) => PassagerHome());
+          route = MaterialPageRoute(
+              builder: (_) => PassagerHome(
+                    userType: responseData['data']['type'],
+                    userName: responseData['data']['nom'],
+                    userPrenom: responseData['data']['prenom'],
+                    userEmail: responseData['data']['email'],
+                  ));
+          break;
+        case 'passageretchaufeur':
+          route = MaterialPageRoute(
+              builder: (_) => PassagerHome(
+                    userType: responseData['data']['type'],
+                    userName: responseData['data']['nom'],
+                    userPrenom: responseData['data']['prenom'],
+                    userEmail: responseData['data']['email'],
+                  ));
           break;
         case 'chauffeur':
-          route = MaterialPageRoute(builder: (_) => Home());
+          route = MaterialPageRoute(builder: (_) => ChauffeurHome());
           break;
         default:
           route = MaterialPageRoute(builder: (_) => InscrPassager());
@@ -72,7 +86,24 @@ class _ConnexionState extends State<Connexion> {
       Navigator.pushReplacement(context, route);
       // Navigate to the next screen or perform other actions
     } else if (response.statusCode == 401) {
-      // Handle the case where no matching user is found
+      print("no matching info");
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Erreur"),
+            content: Text("Aucune information correspondante."),
+            actions: <Widget>[
+              TextButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
     } else {
       // Handle other errors
     }
@@ -152,7 +183,7 @@ class _ConnexionState extends State<Connexion> {
 
   Future<void> verifyPhoneNumber(String phoneNumber) async {
     final url = Uri.parse(
-        'http://192.168.1.9:8080/user/verifier-numero?numero_telephone=$phoneNumber');
+        'http://192.168.1.14:3000/user/verifier-numero?numero_telephone=$phoneNumber');
 
     try {
       final response = await http.get(url);
@@ -520,7 +551,7 @@ class _HomePageState extends State<HomePage> {
   bool _passwordsMatch = true;
 
   Future<void> changePassword(String newPassword, String phoneNumber) async {
-    final Uri url = Uri.parse('http://192.168.1.9:8080/user/changePassword');
+    final Uri url = Uri.parse('http://192.168.1.14:3000/user/changePassword');
 
     final response = await http.put(
       url,
