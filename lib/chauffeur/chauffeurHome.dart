@@ -4,6 +4,10 @@ import 'package:weslini/chauffeur/gain.dart';
 import 'package:weslini/chauffeur/historique.dart';
 
 import 'package:weslini/chauffeur/inscription.dart';
+import 'package:weslini/chauffeur/profilechauffeur.dart';
+import 'package:weslini/chauffeur/updateCarte.dart';
+import 'package:weslini/chauffeur/updatePerso.dart';
+import 'package:weslini/chauffeur/updateVehicue.dart';
 import 'package:weslini/connexion/connexion.dart';
 
 class ChauffeurHome extends StatefulWidget {
@@ -427,6 +431,42 @@ class _ChauffeurHomeState extends State<ChauffeurHome> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Connexion()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('profil'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileChauffeur()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('UpdatePerso'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => UpdatePerso()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('updateVehicule'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => updateVehicule()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('updateCarte'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => updateCarte()),
                 );
               },
             ),
