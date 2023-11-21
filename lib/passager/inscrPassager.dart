@@ -207,7 +207,7 @@ class _InscrPassagerState extends State<InscrPassager> {
     };
 
     final String url =
-        'http://192.168.1.5:8080/utilisateurs'; // Remplacez par l'URL de votre backend
+        'http://192.168.1.14:3000/utilisateurs'; // Remplacez par l'URL de votre backend
 
     final response = await http.post(
       Uri.parse(url),
@@ -251,7 +251,7 @@ class _InscrPassagerState extends State<InscrPassager> {
 
   Future<void> validatePassager(BuildContext context, String passagerID) async {
     final String url =
-        'http://192.168.1.4:8080/validatePassager/$passagerID'; // Remplacez par l'URL de votre backend
+        'http://192.168.1.14:3000/validatePassager/$passagerID'; // Remplacez par l'URL de votre backend
 
     final response = await http.put(
       Uri.parse(url),

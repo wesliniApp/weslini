@@ -40,7 +40,7 @@ class _ProfileState extends State<Profile> {
 
   Future<Map<String, dynamic>> fetchUserData() async {
     final response =
-        await http.get(Uri.parse('http://192.168.1.14:3000/user/persoShow'));
+        await http.get(Uri.parse('http://192.168.1.14:3000/user/PassagerShow'));
 
     if (response.statusCode == 200) {
       // If server returns an OK response, parse the JSON

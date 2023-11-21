@@ -30,6 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_maps_flutter: ^2.5.0
+  permission_handler: ^10.1.0
+  geolocator: ^10.1.0
   intl: ^0.17.0
   animated_splash_screen: ^1.2.0
   file_picker: ^4.0.10

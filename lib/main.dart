@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:weslini/admin_web/admin.dart';
 import 'package:weslini/chauffeur/inscription.dart';
 import 'package:weslini/connexion/connexion.dart';
+import 'package:weslini/map.dart';
 
 import 'package:weslini/passager/chat.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false, //pour enlever sharit a cote
-        home: Connexion());
+        home: MapScreen());
   }
 }
 
