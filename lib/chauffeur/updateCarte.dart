@@ -287,14 +287,22 @@ class _updateCarteState extends State<updateCarte> {
                           onPressed: () async {
                             FilePickerResult? result =
                                 await FilePicker.platform.pickFiles();
-                            if (result != null) {
+                            if (result != null && result.files.isNotEmpty) {
                               PlatformFile file = result.files.first;
 
-                              // Mettez à jour le contrôleur avec le nom du fichier sélectionné
+                              // Update the controller with the selected file name
                               updatePermisrecto(file.name);
 
-                              // Vous pouvez également stocker le chemin du fichier si nécessaire
+                              // Store the file path if needed
                               String? filePath = file.path;
+
+                              // Add additional logic if required
+                              // ...
+
+                              print("Selected file: ${file.name}");
+                              print("File path: $filePath");
+                            } else {
+                              print("No file selected");
                             }
                           },
                           child: Text("Parcourir photo recto de permis"),
@@ -309,17 +317,25 @@ class _updateCarteState extends State<updateCarte> {
                           onPressed: () async {
                             FilePickerResult? result =
                                 await FilePicker.platform.pickFiles();
-                            if (result != null) {
+                            if (result != null && result.files.isNotEmpty) {
                               PlatformFile file = result.files.first;
 
-                              // Mettez à jour le contrôleur avec le nom du fichier sélectionné
-                              updatePermisverso(file.name);
+                              // Update the controller with the selected file name
+                              updatePermisrecto(file.name);
 
-                              // Vous pouvez également stocker le chemin du fichier si nécessaire
+                              // Store the file path if needed
                               String? filePath = file.path;
+
+                              // Add additional logic if required
+                              // ...
+
+                              print("Selected file: ${file.name}");
+                              print("File path: $filePath");
+                            } else {
+                              print("No file selected");
                             }
                           },
-                          child: Text("Parcourir photo verso de permis"),
+                          child: Text("Parcourir photo recto de permis"),
                         ),
                       ),
                     ],

@@ -39,7 +39,7 @@ class _ConnexionState extends State<Connexion> {
       "password": password,
     };
     final String apiUrl =
-        'http://192.168.1.14:3000/user/login'; // Replace with your API URL
+        'http://192.168.1.40:3000/user/login'; // Replace with your API URL
 
     final response = await http.post(
       Uri.parse(apiUrl),

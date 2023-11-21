@@ -4,6 +4,7 @@ import 'package:weslini/chauffeur/gain.dart';
 import 'package:weslini/chauffeur/historique.dart';
 
 import 'package:weslini/chauffeur/inscription.dart';
+import 'package:weslini/chauffeur/map.dart';
 import 'package:weslini/chauffeur/profilechauffeur.dart';
 import 'package:weslini/chauffeur/updateCarte.dart';
 import 'package:weslini/chauffeur/updatePerso.dart';
@@ -470,6 +471,28 @@ class _ChauffeurHomeState extends State<ChauffeurHome> {
                 );
               },
             ),
+            ListTile(
+              title: Text('Update Carte'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          MapScreen()), // Use MapScreen, not Map
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Update Carte'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          MapScreen()), // Use MapScreen, not Map
+                );
+              },
+            )
           ],
         ),
       ),
