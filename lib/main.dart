@@ -4,6 +4,7 @@ import 'package:weslini/admin_web/admin.dart';
 import 'package:weslini/chauffeur/inscription.dart';
 import 'package:weslini/chauffeur/map.dart';
 import 'package:weslini/connexion/connexion.dart';
+import 'package:weslini/map.dart';
 
 import 'package:weslini/passager/chat.dart';
 

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapScreenn extends StatefulWidget {
+class MapScreen extends StatefulWidget {
   @override
-  _MapScreennState createState() => _MapScreennState();
+  _MapScreenState createState() => _MapScreenState();
 }
 
-class _MapScreennState extends State<MapScreenn> {
+class _MapScreenState extends State<MapScreen> {
   GoogleMapController? mapController; // Use GoogleMapController?
 
   @override
