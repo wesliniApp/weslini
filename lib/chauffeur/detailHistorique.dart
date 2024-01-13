@@ -1,8 +1,43 @@
 import 'package:flutter/material.dart';
 
 class DetailHistorique extends StatefulWidget {
-  const DetailHistorique({super.key});
+  final String idChauffeur;
+  final String idPassager;
+  final String typeOffre;
+  final String marqueVehicule;
+  final String couleurVehicule;
+  final String plaqueVehicule;
+  final String nomPassager;
+  final String prenomPassager;
+  final String prixCourse;
+  final String date;
+  final String time;
+  final String duree;
+  final String distance;
+  final String wilayaDepart;
+  final String wilayaDistination;
+  final String localisationDepart;
+  final String localisationDistination;
 
+  DetailHistorique({
+    required this.idChauffeur,
+    required this.idPassager,
+    required this.typeOffre,
+    required this.marqueVehicule,
+    required this.couleurVehicule,
+    required this.plaqueVehicule,
+    required this.nomPassager,
+    required this.prenomPassager,
+    required this.prixCourse,
+    required this.date,
+    required this.time,
+    required this.duree,
+    required this.distance,
+    required this.wilayaDepart,
+    required this.wilayaDistination,
+    required this.localisationDepart,
+    required this.localisationDistination,
+  });
   @override
   State<DetailHistorique> createState() => _DetailHistoriqueState();
 }
@@ -66,7 +101,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          "classique",
+                          "${widget.typeOffre}",
                           style: TextStyle(
                             fontFamily: 'inter',
                             fontSize: screenWidth < 600 ? 14 : 18,
@@ -84,7 +119,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "ZOTYE T200 - Cris Argent",
+                                  "${widget.marqueVehicule} - ${widget.couleurVehicule}",
                                   style: TextStyle(
                                     fontFamily: 'inter',
                                     fontSize: screenWidth < 600 ? 14 : 18,
@@ -96,7 +131,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                                   height: 5.0,
                                 ),
                                 Text(
-                                  "18057-112-35",
+                                  "${widget.plaqueVehicule}",
                                   style: TextStyle(
                                     fontFamily: 'inter',
                                     fontSize: screenWidth < 600 ? 14 : 18,
@@ -134,7 +169,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  "nadjet boum",
+                                  "${widget.prenomPassager} ${widget.nomPassager}",
                                   style: TextStyle(
                                     fontFamily: 'inter',
                                     fontSize: screenWidth < 600 ? 14 : 18,
@@ -197,9 +232,11 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                                     Padding(
                                       padding: EdgeInsets.only(left: 10.0),
                                       child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
-                                            "alger, algerie",
+                                            "${widget.wilayaDepart}",
                                             style: TextStyle(
                                               fontFamily: 'inter',
                                               fontSize:
@@ -209,7 +246,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                                             ),
                                           ),
                                           Text(
-                                            "alger, algerie",
+                                            "${widget.localisationDepart}",
                                             style: TextStyle(
                                               fontFamily: 'inter',
                                               fontSize:
@@ -228,7 +265,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                                   child: Align(
                                 alignment: Alignment.centerRight,
                                 child: Text(
-                                  'durée : 102h',
+                                  'durée : ${widget.duree}',
                                   style: TextStyle(
                                     fontFamily: 'inter',
                                     fontSize: screenWidth < 600 ? 14 : 20,
@@ -271,9 +308,11 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                                     Padding(
                                       padding: EdgeInsets.only(left: 10.0),
                                       child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text(
-                                            "alger, algerie",
+                                            "${widget.wilayaDistination}",
                                             style: TextStyle(
                                               fontFamily: 'inter',
                                               fontSize:
@@ -283,7 +322,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                                             ),
                                           ),
                                           Text(
-                                            "alger, algerie",
+                                            "${widget.localisationDistination}",
                                             style: TextStyle(
                                               fontFamily: 'inter',
                                               fontSize:
@@ -302,7 +341,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                                   child: Align(
                                 alignment: Alignment.centerRight,
                                 child: Text(
-                                  'distance : 15km',
+                                  'distance : ${widget.distance}',
                                   style: TextStyle(
                                     fontFamily: 'inter',
                                     fontSize: screenWidth < 600 ? 14 : 20,
@@ -351,7 +390,7 @@ class _DetailHistoriqueState extends State<DetailHistorique> {
                           height: 15.0,
                         ),
                         Text(
-                          "1167 DZD",
+                          "${widget.prixCourse}",
                           style: TextStyle(
                             fontFamily: 'inter',
                             fontSize: screenWidth < 600 ? 14 : 18,

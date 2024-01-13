@@ -69,7 +69,7 @@ class LocationService {
 
   Future<void> storeLocation(double latitude, double longitude) async {
     final response = await http.post(
-      Uri.parse('http://localhost:3000/store-location'),
+      Uri.parse('http://192.168.1.34:3000/store-location'),
       headers: <String, String>{
         'Content-Type': 'application/json',
       },
@@ -84,20 +84,20 @@ class LocationService {
   }
 
   Future<List<Location>> fetchLocations() async {
-  final response = await http.get(Uri.parse('http://localhost:3000/get-locations'));
+    final response =
+        await http.get(Uri.parse('http://192.168.1.34:3000/get-locations'));
 
-  if (response.statusCode == 200) {
-    final List<dynamic> data = json.decode(response.body);
-    final List<Location> locations = data.map((location) {
-      return Location(
-        latitude: location['latitude'],
-        longitude: location['longitude'],
-      );
-    }).toList();
-    return locations;
-  } else {
-    throw Exception('Failed to fetch locations');
+    if (response.statusCode == 200) {
+      final List<dynamic> data = json.decode(response.body);
+      final List<Location> locations = data.map((location) {
+        return Location(
+          latitude: location['latitude'],
+          longitude: location['longitude'],
+        );
+      }).toList();
+      return locations;
+    } else {
+      throw Exception('Failed to fetch locations');
+    }
   }
-}
-
 }

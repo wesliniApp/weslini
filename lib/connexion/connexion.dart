@@ -12,6 +12,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:math';
+import 'package:weslini/backend/utils.dart';
 
 BuildContext? globalContext;
 
@@ -39,7 +40,7 @@ class _ConnexionState extends State<Connexion> {
       "password": password,
     };
     final String apiUrl =
-        'http://192.168.1.40:3000/user/login'; // Replace with your API URL
+        '${Utils.baseUrl}/user/login'; // Replace with your API URL
 
     final response = await http.post(
       Uri.parse(apiUrl),
@@ -183,7 +184,7 @@ class _ConnexionState extends State<Connexion> {
 
   Future<void> verifyPhoneNumber(String phoneNumber) async {
     final url = Uri.parse(
-        'http://192.168.1.14:3000/user/verifier-numero?numero_telephone=$phoneNumber');
+        '${Utils.baseUrl}/user/verifier-numero?numero_telephone=$phoneNumber');
 
     try {
       final response = await http.get(url);
@@ -551,7 +552,7 @@ class _HomePageState extends State<HomePage> {
   bool _passwordsMatch = true;
 
   Future<void> changePassword(String newPassword, String phoneNumber) async {
-    final Uri url = Uri.parse('http://192.168.1.14:3000/user/changePassword');
+    final Uri url = Uri.parse('${Utils.baseUrl}/user/changePassword');
 
     final response = await http.put(
       url,

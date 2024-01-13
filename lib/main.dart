@@ -5,7 +5,11 @@ import 'package:weslini/chauffeur/inscription.dart';
 import 'package:weslini/chauffeur/map.dart';
 import 'package:weslini/chauffeur/position.dart';
 import 'package:weslini/connexion/connexion.dart';
-import 'package:weslini/map.dart';
+import 'package:weslini/essaye/pageMap.dart';
+import 'package:weslini/essaye/test.dart';
+
+import 'package:weslini/chauffeur/chauffeurHome.dart';
+import 'package:weslini/chauffeur/try.dart';
 
 import 'package:weslini/passager/chat.dart';
 
@@ -21,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false, //pour enlever sharit a cote
-        home: position());
+        home: Connexion());
   }
 }
 

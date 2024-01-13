@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/wesliniApp/weslini#readme",
   "dependencies": {
-    "express-fileupload": "^1.4.3"
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.3",
+    "socket.io": "^4.7.2",
+    "ws": "^8.15.1"
   }
 }
